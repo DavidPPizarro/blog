@@ -1,0 +1,25 @@
+---
+//componet import
+import MainHead from "./MainHead.astro";
+
+//import css style
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "My Blog",
+  description = "My musings about te Astro framework",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <MainHead {title} {description} /
+  <body>
+    <slot> Default Text</slot>
+  </body>
+</html>
